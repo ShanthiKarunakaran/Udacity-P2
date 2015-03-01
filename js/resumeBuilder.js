@@ -2,28 +2,28 @@
 var work = {
 	"jobs" : [
 		{
-			"employer": "QpointTech",
+			"employer": "QYZ",
 			"title": "UI Developer",
 			"location": "401 Castro Street,Mountain View, CA, US",
 			"dates": "September 2010 to present",
-			"description": "Develop and maintain the User Interface of the Web application GDX.GDX is a multi-tenant SaaS application used by Manufacturing companies for collecting and managing environmental compliance data from their supply chain.GDX is developed in Java/GRAILS/MySQL with a modern UI developed using HTML/CSS and Javascript."
+			"description": "Develop and maintain the User Interface of the Web application"
 		},
 		{
-			"employer": "B!",
+			"employer": "BYZ",
 			"title": "Web Programmer",
 			"location": "Los Gatos, CA, US",
 			"dates": "September 2005 to 2010",
-			"description": "Key member of the team , responsible in building client facing website.Created user interface using XHTML,CSS,JQuery,AJAX,XSLT,XML."
+			"description": "Key member of the team , responsible in building client facing website"
 		},
 		{
-			"employer": "Ooma",
+			"employer": "OBC",
 			"title": "UI Developer",
 			"location": "San Francisco, US",
 			"dates": "2008 to 2010",
-			"description": "Key member developing and maintaining the HTML/CSS , Javascript for the ooma website."
+			"description": "Key member developing and maintaining the HTML/CSS , Javascript for the company website."
 		},
 		{
-			"employer": "DBSS",
+			"employer": "DXCB",
 			"title": "Web Programmer",
 			"location": "Chennai,India",
 			"dates": "September 1995 to 2000",
@@ -31,8 +31,7 @@ var work = {
 		}
 	],
 	display: function() {
-		//creates a new div for workexperience
-		$("#workExperience").append(HTMLworkStart);
+
 		var obj = work.jobs;
 		var formattedString;
 
@@ -41,10 +40,12 @@ var work = {
 		    "jobkeys" : ["employer", "title", "location", "dates", "description"]
 		};
 
+		//a generalised function that loops through the object properties and replaces the HTML strings appropriately
 		for(var prop in obj) {
+			//creates a new div for workexperience
+			$("#workExperience").append(HTMLworkStart);
 			//Check to make sure you are including only instances of your own object(not the ones from the Prototype chain)
 			if (!obj.hasOwnProperty(prop)) { continue; }
-
 			for(var j=0; j < myMappings.HTMLobj.length; j++) {
 				var HTMLstr = myMappings.HTMLobj[j];
 				var formattedString = window[HTMLstr].replace("%data%",work.jobs[prop][myMappings.jobkeys[j]]);
@@ -58,16 +59,16 @@ var work = {
 var projects = {
 	"projects" : [
 		{
-			"title": "Sample Project 1 : web redesign",
+			"title": "Web redesign",
 			"dates": "September 2009 to 2010",
-			"description": "changed the entire web interface.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam in placerat sem, in ultrices metus. Aenean vitae ex vitae orci scelerisque mollis ac a metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.",
-			"images" : ["http://placehold.it/120/ccc/fff.png" , "http://placehold.it/130/ccc/000.png"]
+			"description": "changed the entire web interface.Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+			"images" : ["http://placehold.it/120/ccc/fff.png" , "http://placehold.it/120/ccc/000.png"]
 		},
 		{
-			"title": "Sample Project 2: dashboard interface",
+			"title": "Dashboard interface",
 			"dates": "September 2011 to 2012",
-			"description": "changed the dashboard interface.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam in placerat sem, in ultrices metus. Aenean vitae ex vitae orci scelerisque mollis ac a metus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. ",
-			"images" : ["http://placehold.it/140/ccc/d4d4.png" , "http://placehold.it/150/ccc/f00.png"]
+			"description": "changed the dashboard interface.Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
+			"images" : ["http://placehold.it/120/ccc/d4d4.png" , "http://placehold.it/120/ccc/f00.png"]
 		}
 	],
 	display: function() {
@@ -79,25 +80,8 @@ var projects = {
 		    "projectkeys" : ["title", "dates", "description", "images"]
 		};
 
-		for(var prop in obj) {
-			$("#projects").append(HTMLprojectStart);
-			//Check to make sure you are including only instances of your own object(not the ones from the Prototype chain)
-			if (!obj.hasOwnProperty(prop)) { continue; }
-			for(var j=0; j < myMappings.HTMLobj.length; j++) {
-				var HTMLstr = myMappings.HTMLobj[j];
-
-				//Todo : Loop through images array
-				/*if (obj.constructor.toString().indexOf("Array") > -1 ) {
-					for ( var k = 0; k < )
-				}*/
-
-				var formattedString = window[HTMLstr].replace("%data%",obj[prop][myMappings.projectkeys[j]]);
-				$(".project-entry:last").append(formattedString);
-			}
-		}
-
 		//to iterate over all properties of projects , we can iterate over the object using for..in
-		/*for( var index in obj) {
+		for( var index in obj) {
 			$("#projects").append(HTMLprojectStart);
 			var formattedprojectTitle = HTMLprojectTitle.replace("%data%",obj[index].title);
 			var formattedprojectDates = HTMLprojectDates.replace("%data%",obj[index].dates);
@@ -113,8 +97,7 @@ var projects = {
 				var formattedprojectImage = HTMLprojectImage.replace("%data%",img);
 				$(".project-entry:last").append(formattedprojectImage);
 			}
-		}*/
-
+		}
 	}
 };
 
