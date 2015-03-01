@@ -5,7 +5,7 @@ var work = {
 			"employer": "QYZ",
 			"title": "UI Developer",
 			"location": "401 Castro Street,Mountain View, CA, US",
-			"dates": "September 2010 to present",
+			"dates": "09-05-2010 to present",
 			"description": "Develop and maintain the User Interface of the Web application"
 		},
 		{
@@ -66,7 +66,7 @@ var projects = {
 		},
 		{
 			"title": "Dashboard interface",
-			"dates": "September 2011 to 2012",
+			"dates": "09-09-2011 to 2012",
 			"description": "changed the dashboard interface.Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
 			"images" : ["http://placehold.it/120/ccc/d4d4.png" , "http://placehold.it/120/ccc/f00.png"]
 		}
@@ -118,6 +118,7 @@ var bio = {
 	"bioPic": "images/peace_dove.jpg",
 	display: function() {
 		var obj = bio;
+		var length = obj.skills.length;
 
 		var formattedName = HTMLheaderName.replace("%data%", obj.name);
 		var formattedRole = HTMLheaderRole.replace("%data%", obj.role);
@@ -129,10 +130,9 @@ var bio = {
 		var formattedBioPic = HTMLbioPic.replace("%data%",obj.bioPic);
 		var formattedWelcomeMsg = HTMLWelcomeMsg.replace("%data%",obj.welcomeMessage);
 		var formattedSkills = " ";
-		for(var i in obj.skills) {
+		for ( var i = 0 ; i < length ; i++) {
 			formattedSkills += HTMLskills.replace("%data%",obj.skills[i]);
 		}
-
 
 		$("#header").prepend(formattedRole);
 		$("#header").prepend(formattedName);
@@ -167,7 +167,7 @@ var education = {
 			"schoolname" : "CIT",
 			"location": "Coimbatore",
 			"schoolDegree" : "BS",
-			"schoolMajors" : ["ECE"],
+			"schoolMajors" : ["ECE","Engineering"],
 			"schoolgradYear" : "1995",
 			"url" : "http://en.wikipedia.org/wiki/Coimbatore_Institute_of_Technology"
 		},
@@ -175,7 +175,7 @@ var education = {
 			"schoolname" : "NIIT",
 			"location": "Coimbatore",
 			"schoolDegree" : "Computer Science",
-			"schoolMajors" : ["CS"],
+			"schoolMajors" : ["CS","Engineering"],
 			"schoolgradYear": "1996",
 			"url" : "http://www.niit.com/en/learning-outsourcing"
 		}
