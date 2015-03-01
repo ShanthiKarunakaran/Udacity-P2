@@ -1,6 +1,6 @@
 * {
-  padding:0;
-  margin:0;
+  padding: 0;
+  margin: 0;
   font-family: 'Roboto', sans-serif;
 }
 
@@ -50,7 +50,7 @@ h4 {
 }
 
 h2, h3, h4, h5 {
-  padding:10px;
+  padding: 10px;
   padding-left: 5%;
   padding-right: 5%;
 }
@@ -71,6 +71,7 @@ h2, h3, h4, h5 {
   float: left;
 }
 
+/*back to top links*/
 .secondary-link {
   font-size: 11px;
   padding: 1% 1% 1% 0;
@@ -78,7 +79,7 @@ h2, h3, h4, h5 {
 
 /*Primary Navigation*/
 .toggle-nav {
-    display:none;
+    display: none;
 }
 
 nav {
@@ -87,7 +88,7 @@ nav {
 
 .fixed-header {
   position: fixed;
-  top:  0;
+  top: 0;
   left: 0;
   width: 100%;
   background-color: #626263;
@@ -131,11 +132,8 @@ a {
 }
 
 a:hover {
-  color:#309BE8;
+  color: #309BE8;
 }
-
-/*Transition : fade the color */
-a { -webkit-transition: color .4s ease-out; }
 
 .welcome-message {
   font-style: italic;
@@ -173,23 +171,17 @@ a { -webkit-transition: color .4s ease-out; }
 }
 
 .orange-text {
-  /*color: #F5AE23;*/
   color: #0F0D0A;
 }
 
 .gray {
   background-color: rgba(227, 232, 234, 0.37);
   padding-bottom: 10px;
-  clear:both;
+  clear: both;
 }
 
 .dark-gray {
   background-color: #4A4A4A;
-}
-
-/* TODO: Replace with image later */
-#header {
- /*background-color: #484848;*/
 }
 
 .headerrole {
@@ -216,10 +208,7 @@ a { -webkit-transition: color .4s ease-out; }
 }
 
 .center-content {
-  padding-top: 2.5%;
-  padding-left: 5%;
-  padding-right: 5%;
-  padding-bottom: 2.5%
+  padding: 2.5% 5% 2.5% 5%;
 }
 
 ul {
