@@ -20,6 +20,7 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
 
   <!-- Tells the browser what the title of this page should be. -->
   <title>Resume</title>
+  <link rel="stylesheet" href="css/bootstrap.min.css">
 
   <!-- Load the page styles. -->
   <link href="css/style.css" rel="stylesheet" type="text/css">
@@ -47,57 +48,72 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
   Google Map to your resume!
   -->
   <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?libraries=places"></script>
-  <script src="http://d3js.org/d3.v3.min.js"  charset="utf-8"></script>
 
   <meta name="viewport" content="width=device-width">
 </head>
-<body unresolved>
-  <div id="main">
-    <!--
-    Everything from here to the <script> tag below is the skeleton of your
-    website. Your code will add information to each of the sections of the
-    resume below. You can pretty easily figure out what each section will
-    display by looking at the id or at what's written between the <h2> tags.
-    -->
-    <div id="header" class="center-content clearfix">
-      <ul id="topContacts" class='flex-box'></ul>
+<body>
+  <div class="container-fluid">
+    <div id="main">
+      <!--
+      Everything from here to the <script> tag below is the skeleton of your
+      website. Your code will add information to each of the sections of the
+      resume below. You can pretty easily figure out what each section will
+      display by looking at the id or at what's written between the <h2> tags.
+      -->
+      <div id="header" class="center-content clearfix">
+          <ul id="topContacts" class='flex-box'></ul>
+      </div>
+
+      <div style='clear: both;'></div>
+
+      <!--responsive menu/nav with links when clicked goes to the appropriate sections-->
+      <nav class="nav" id="main-nav">
+        <ul class="nav-list active">
+          <li><a href="#workExperience" class="nav-links" title="My work">Work</a></li>
+          <li><a href="#projects" class="nav-links" title="My Projects">Projects</a></li>
+          <li><a href="#education" class="nav-links" title="Education">Education</a></li>
+          <li><a href="#letsConnect" class="nav-links" title="Contact Me">Contact Me</a></li>
+        </ul>
+        <a class="toggle-nav" href="#">&#9776;</a>
+      </nav>
+
+      <div class="row">
+        <div id="workExperience" class='gray'>
+          <h2>Work Experience</h2>
+        </div>
+      </div>
+      <a href="#header" class="fright secondary-link">Back to top</a>
+
+      <div class="row">
+        <div id="projects" class="gray">
+            <span class="tab"></span>
+            <h2>Projects</h2>
+        </div>
+      </div>
+      <a href="#header" class="fright secondary-link">Back to top</a>
+
+      <div class="row">
+        <div id="education" class='gray'>
+            <span class="tab"></span>
+            <h2>Education</h2>
+        </div>
+      </div>
+      <a href="#header" class="fright secondary-link">Back to top</a>
+
+      <div id="mapDiv" class="gray">
+        <span class="tab"></span>
+        <h2>Where I've Lived and Worked</h2>
+      </div>
+      <a href="#header" class="fright secondary-link">Back to top</a>
+
+      <div id="letsConnect" class='dark-gray'>
+        <h2 class='orange center-text'>Let's Connect</h2>
+          <ul id="footerContacts" class="flex-box">
+        </ul>
+      </div>
+
     </div>
-    <div style='clear: both;'></div>
-    <!--responsive menu/nav with links when clicked goes to the appropriate sections-->
-    <nav class="primary-nav">
-      <ul class="primary-nav-list nav-active">
-        <li><a href="#workExperience" class="primary-nav-links" title="My work">Work</a></li>
-        <li><a href="#projects" class="primary-nav-links" title="My Projects">Projects</a></li>
-        <li><a href="#education" class="primary-nav-links" title="Education">Education</a></li>
-        <li><a href="#letsConnect" class="primary-nav-links" title="Contact Me">Contact Me</a></li>
-      </ul>
-      <a class="toggle-nav" href="#">&#9776;</a>
-    </nav>
-    <div id="workExperience" class='gray'>
-      <h2>Work Experience</h2>
-    </div>
-    <a href="#header" class="fright secondary-link">Back to top</a>
-    <div id="projects">
-      <span class="tab"></span>
-      <h2>Projects</h2>
-    </div>
-    <a href="#header" class="fright secondary-link">Back to top</a>
-    <div id="education" class='gray'>
-      <span class="tab"></span>
-      <h2>Education</h2>
-    </div>
-    <a href="#header" class="fright secondary-link">Back to top</a>
-    <div id="mapDiv">
-      <span class="tab"></span>
-      <h2>Where I've Lived and Worked</h2>
-    </div>
-    <a href="#header" class="fright secondary-link">Back to top</a>
-    <div id="letsConnect" class='dark-gray'>
-      <h2 class='orange center-text'>Let's Connect</h2>
-        <ul id="footerContacts" class="flex-box">
-      </ul>
-    </div>
-  </div>
+  </div> <!-- end of container div -->
 
   <!--
   The next line tells the browser where to download the JavaScript file you'll be
@@ -153,13 +169,33 @@ need to load. You'll see a lot of <link>s to CSS files for styles and
 
     //Responsive menu (for the Primary Nav)
     $(document).ready(function() {
-      $('.primary-nav').click(function(e) {
-        $(this).toggleClass('nav-active');
-        $('.primary-nav-list').toggleClass('nav-active');
-        e.preventDefault();
+      //When the trigger link is clicked, then add active class to the ul
+      $('.toggle-nav').click(function(e) {
+        $(this).toggleClass('active');
+        $('nav ul').toggleClass('active');
       });
 
-    });
+      //When the user scrolls, make the menubar fixed so the user can still have access to it when you scroll below the content
+      var $window = $(window);
+      var nav = $('#main-nav');
+      $window.scroll(function(){
+          if ($window.scrollTop() >= 300) {
+             nav.addClass('fixed-header');
+          }
+          else {
+             nav.removeClass('fixed-header');
+          }
+      });
+
+      //Highlight the current link in the menubar
+      $('#main-nav a').click(function () {
+        $('#main-nav a').css('text-decoration', 'none');
+        $('#main-nav a').css('color', '#F29C5D');
+        $(this).css('text-decoration', 'underline');
+        $(this).css('color','#94BFDC');
+      });
+
+      });
 
   </script>
 </body>
