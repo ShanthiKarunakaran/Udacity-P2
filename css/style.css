@@ -9,13 +9,17 @@
 }
 
 .education-entry, .work-entry, .project-entry {
-  padding-left: 5%;
-  padding-right: 5%;
+  padding-left: 1%;
+  padding-right: 1%;
+  border: 1px solid #d4d4d4;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -mozilla-border-radius: 6px;
+  margin: 2%;
 }
 
 h1 {
   font-size: 40px;
-  /*color: #94BFDC;*/
   color: #3D84B3;
   line-height: 48px;
   display: inline;
@@ -25,9 +29,10 @@ h1 {
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: #3486C5;
+  color: #1A1A1B;
   line-height: 29px;
   padding: 10px;
+  text-shadow: 2px 2px 2px #CBC;
 }
 
 h3 {
@@ -55,15 +60,6 @@ h2, h3, h4, h5 {
   font-size: 14px;
   color: #999999;
   line-height: 16px;
-  float: left;
-}
-
-.location-text {
-  font-style: italic;
-  font-size: 14px;
-  color: #999999;
-  line-height: 16px;
-  float: right;
 }
 
 /*Utility classes*/
@@ -85,15 +81,25 @@ h2, h3, h4, h5 {
     display:none;
 }
 
-.primary-nav {
+nav {
   margin-bottom: 2%;
 }
 
-.primary-nav-list {
+.fixed-header {
+  position: fixed;
+  top:  0;
+  left: 0;
+  width: 100%;
+  background-color: #626263;
+  /*so that the fixed nav doesn't overlap the other elements when the user scrolls */
+  z-index: 2000;
+}
+
+.nav-list {
   text-align: center;
 }
 
-.primary-nav-list li {
+.nav-list li {
     display: inline;
     cursor: pointer;
     margin-right: 10px;
@@ -104,10 +110,9 @@ h2, h3, h4, h5 {
     -ms-transition: 0.3s;
     padding: 1% 1% 0% 1%;
     font-size: 24px;
-    border-bottom: 2px solid #F5F5F5;
 }
 
-.primary-nav-links {
+.nav-links {
   color: #F29C5D;
   display: inline-block;
 }
@@ -129,7 +134,7 @@ a:hover {
   color:#309BE8;
 }
 
-/*Transition : fade the color */;
+/*Transition : fade the color */
 a { -webkit-transition: color .4s ease-out; }
 
 .welcome-message {
@@ -172,12 +177,8 @@ a { -webkit-transition: color .4s ease-out; }
   color: #0F0D0A;
 }
 
-.white-text {
-  /*color: #FFFFFF;*/
-}
-
 .gray {
-  background-color: rgba(154, 193, 220, 0.16);
+  background-color: rgba(227, 232, 234, 0.37);
   padding-bottom: 10px;
   clear:both;
 }
@@ -189,7 +190,6 @@ a { -webkit-transition: color .4s ease-out; }
 /* TODO: Replace with image later */
 #header {
  /*background-color: #484848;*/
-
 }
 
 .headerrole {
@@ -215,7 +215,6 @@ a { -webkit-transition: color .4s ease-out; }
   padding-left: 10px;
 }
 
-
 .center-content {
   padding-top: 2.5%;
   padding-left: 5%;
@@ -236,18 +235,6 @@ ul {
 
 img {
   padding: 10px;
-}
-
-/* Bar chart stuff */
-.chart div {
-  font: 10px sans-serif;
-  background-color: #4A4A4A;
-  text-align: right;
-  padding: 3px;
-  margin: 1px;
-  height: 12px;
-  color: white;
-  display: inline-block;
 }
 
 #letsConnect {
@@ -311,34 +298,49 @@ img {
     font-size: 12px;
   }
 
-  .primary-nav {
+  .nav {
     position: relative;
+    display: inline-block;
   }
 
-  .primary-nav ul.nav-active {
+  /* this is activated using Jquery when the trigger link is clicked */
+  .active {
     display: none;
   }
 
-  .primary-nav ul {
+  /*display responsive ul dropdown menu relative to the .nav(the nav that houses the entire menu)*/
+  .nav-list {
     position: absolute;
+    z-index: 100;
     top: 100%;
     border: 1px solid #E1EAF2;
-    background-color: #D1E9EE;
+    background-color: #fff;
     width: 13em;
   }
 
-  .primary-nav-list li {
+  /*display the list items within the menu to be block items */
+  .nav-list li {
     display: block;
     font-size: 14px;
     padding: 5%;
     margin: 10%;
+    border-bottom: 1px solid #EFEFEF;
   }
 
-  .primary-nav a {
+  /*display the anchor links within each li element in the menu to be block so that the whole a element can be clicked*/
+  nav a {
     display: block;
   }
 
-  .toggle-nav,.primary-nav ul {
-    margin-left : 5%;
+  .toggle-nav {
+    display: inline-block;
+    color: rgb(12, 12, 12);
+    background-color: #626263;
+    padding: 1em;
+    border: 1px solid #B4B5AF;
+  }
+
+  .fixed-header {
+    background-color: transparent;
   }
 }
