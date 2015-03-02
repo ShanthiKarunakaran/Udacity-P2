@@ -20,19 +20,19 @@
 
 h1 {
   font-size: 40px;
-  color: #3D84B3;
+  color: #3d84b3;
   line-height: 48px;
   display: inline;
-  text-shadow: 2px 2px 2px #ADB4B6;
+  text-shadow: 2px 2px 2px #adb4b6;
 }
 
 h2 {
   font-weight: bold;
   font-size: 24px;
-  color: #1A1A1B;
+  color: #1a1a1b;
   line-height: 29px;
   padding: 10px;
-  text-shadow: 2px 2px 2px #CBC;
+  text-shadow: 2px 2px 2px #cbc;
 }
 
 h3 {
@@ -45,14 +45,12 @@ h3 {
 h4 {
   font-weight: bold;
   font-size: 14px;
-  color: #4A4A4A;
+  color: #4a4;
   line-height: 17px;
 }
 
 h2, h3, h4, h5 {
-  padding: 10px;
-  padding-left: 5%;
-  padding-right: 5%;
+  padding: 10px 5% 10px 5%;
 }
 
 .date-text {
@@ -114,7 +112,7 @@ nav {
 }
 
 .nav-links {
-  color: #F29C5D;
+  color: #f29c5d;
   display: inline-block;
 }
 
@@ -125,21 +123,21 @@ p {
 }
 
 a {
-  color: #60A0CE;
+  color: #60a0ce;
   text-decoration: none;
   margin-top: 10px;
   display: block;
 }
 
 a:hover {
-  color: #309BE8;
+  color: #309be8;
 }
 
 .welcome-message {
+  font: 18px/28px "Verdana";
   font-style: italic;
-  font-size: 18px;
-  color: #F3F3F3;
-  line-height: 28px;
+  color: #b00;
+  opacity: 0.2;
 }
 
 #skills {
@@ -155,23 +153,23 @@ a:hover {
   padding: 1%;
   margin: 0 10px 0 0;
   font-size: 15px;
-  color: #0E0B09;
+  color: #0e0b09;
 }
 
 #skillsH3 {
-  color: #86B9C5;
+  color: #86b9c5;
   display: block;
   font-size: 16px;
 }
 
 .orange {
-  background-color: #94BFDC;
+  background-color: #94bfdc;
   color: #fff;
   font-size: 16px;
 }
 
 .orange-text {
-  color: #0F0D0A;
+  color: #0f0d0a;
 }
 
 .gray {
@@ -181,7 +179,7 @@ a:hover {
 }
 
 .dark-gray {
-  background-color: #4A4A4A;
+  background-color: #4a4a4a;
 }
 
 .headerrole {
@@ -195,7 +193,7 @@ a:hover {
   flex-wrap: wrap;
   justify-content: space-around;
   opacity: 0.5;
-  background-color: #94BFDC;
+  background-color: #94bfdc;
 }
 
 .definitionterm {
@@ -231,7 +229,7 @@ img {
 }
 
 #footerContacts {
-  background-color: #F8BF96;
+  background-color: #f8bf96;
 }
 
 @media only screen and (max-width: 1024px) {
@@ -250,9 +248,11 @@ img {
   #letsConnect {
     margin-top: 10%;
   }
+
   .biopic {
     width: 150px;
   }
+
   .welcome-message {
     display: none;
   }
@@ -261,8 +261,7 @@ img {
 #map {
   display: block;
   height: 100%;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin: 0 5% 0 5%;
 }
 
 #mapDiv {
@@ -302,7 +301,7 @@ img {
     position: absolute;
     z-index: 100;
     top: 100%;
-    border: 1px solid #E1EAF2;
+    border: 1px solid #e1eaf2;
     background-color: #fff;
     width: 13em;
   }
@@ -313,7 +312,7 @@ img {
     font-size: 14px;
     padding: 5%;
     margin: 10%;
-    border-bottom: 1px solid #EFEFEF;
+    border-bottom: 1px solid #efefef;
   }
 
   /*display the anchor links within each li element in the menu to be block so that the whole a element can be clicked*/
@@ -326,7 +325,7 @@ img {
     color: rgb(12, 12, 12);
     background-color: #626263;
     padding: 1em;
-    border: 1px solid #B4B5AF;
+    border: 1px solid #b4b5af;
   }
 
   .fixed-header {
